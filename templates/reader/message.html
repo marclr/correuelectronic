@@ -1,0 +1,23 @@
+    <div class="panel panel-default col-sm-9" style="width:100%;">
+        <br>
+        <button class="btn btn-default" id="enrrere" title="Tornar a la bústia">Enrere</button>
+        <button class="btn btn-default" id="respon" title="Respon el correu">Respon</button>
+        <button class="btn btn-default" id="reenvia" title="Reenvia el correu">Reenvia</button>
+        <br><br>
+        <div class="panel panel-default col-sm-9"  style="width:100%; border-color:brown">
+            <strong>De:</strong> <%= msg.get('from') %><button class="btn btn-default pull-right" id="afegirContacte" title="Afegir el remitent als contactes">Afegir als contactes</button><br>
+            <strong>Assumpte:</strong> <%= msg.get('subject') %><br>
+            <strong>Amb còpia:</strong> <%= msg.get('cc') %><br>
+            <strong>Data:</strong> <%= msg.get('date') %><br>
+        </div>
+        <br><br>
+        <div class="panel panel-default col-sm-9" style="width:100%;border-color:brown">
+            <strong>Missatge:</strong><br>
+            <div><%= msg.get('message') %></div>
+            <% if(msg.get('files').length>0) { %>
+                <br>
+                <strong>Fitxers adjunts:</strong>
+                <div><%= msg.get('files') %></div>
+            <%}%>
+        </div>
+</div>

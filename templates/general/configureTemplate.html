@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="container">
+        <div class="panel panel-default col-sm-12">
+            <br>
+            <div class="panel panel-default col-sm-12" style="border-color:brown">
+                <h1><strong>Informació personal </strong></h1>
+                <strong>Nom:</strong><br>
+                <div><input type="text" value="Marc" placeholder="Introdueix el teu nom" title="Introdueix el teu nom" class="form-control"></div><br>
+                <strong>Cognoms:</strong><br>
+                <div><input type="text" value="López" placeholder="Introdueix el teu cognom" title="Introdueix el teu cognom" class="form-control"></div><br>
+                <strong>Correu:</strong><br>
+                <div><input type="text" value="marc@gmail.com" title="La teva adreça electrònica" class="form-control" disabled></div><br>
+                <br>
+                <h1><strong>Configuració del programa </strong></h1>
+                <strong>Mida del text:</strong>
+                <select title="Selecciona la mida del text" class="form-control">
+                    <option selected>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                </select>
+                <br>
+                <br>
+                <strong>Estil de la interfície:</strong>
+                <select title="Selecciona l'estil de la interfície" class="form-control">
+                    <option selected>Clàssic</option>
+                    <option>Nocturn</option>
+                    <option>Daltònic</option>
+                </select>
+                <br>
+                <br>
+                <h1><strong>Configuració avançada </strong><a style="cursor:pointer;text-decoration:none;font-size:10px;" id="showAvancada">(mostrar)</a></h1>
+                <div id="avancada" style="display:none">
+                    <strong>Adreça de reenviament</strong>
+                    <input type="text" placeholder="Introdueix l'adreça de reenviament" title="Introdueix l'adreça de reenviament" class="form-control"/>
+                    <br>
+                    <br>
+                    <strong>Enviament POP</strong><br><br>
+                    <div>1. Estat: <span id="pop"></span></div>
+                    <br>
+                    <div><input type="radio" name="pop" checked>Activa POP per a tots els missatges (fins i tot els que ja s'hagin baixat)</div><br>
+                    <div><input type="radio" name="pop">Activa POP als missatges que arribin a partir d'ara</div><br>
+                    <div><input type="radio" name="pop">Desactiva POP</div><br>
+                    <br>
+                    <span>2. Quan s'accedeix als missatges a través de POP: </span>
+                    <select class="form-control" title="Quan s'accedeix als missatges a través de POP...">
+                        <option value="0" checked>conserva la còpia a la Safata d'entrada</option>
+                        <option value="3">marca la còpia de la bústia com a llegida</option>
+                        <option value="1">arxiva la còpia de la bustia</option>
+                        <option value="2">suprimeix la còpia</option>
+                    </select>
+                    <br>
+                    <br>
+                    <strong>Accés IMAP</strong><br><br>
+                    <div>Estat: <span id="imap"></span></div><br>
+                    <div><input type="radio" name="imap">Activa IMAP</div><br>
+                    <div> <input type="radio" name="imap" checked>Desactiva IMAP</div><br>
+                </div>
+                <br>
+                <button class="btn btn-default" title="Desa els canvis">Desa els canvis</button>
+                <br>
+                <br>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

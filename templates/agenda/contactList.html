@@ -1,0 +1,29 @@
+<button id="goTop" class="btn btn-default" title="Tornar al principi de la pàgina">Tornar al inici</button>
+<% for(var i=65;i<=90; i++) {
+        var lletra = String.fromCharCode(i);
+%>
+    <div class="panel panel-default" style="border-color:#7a251e">
+        <div class="panel-body" id="<%=lletra%>">
+            <b><%= lletra %></b>
+    <ul>
+        <%
+        for(var j=0;j<contactes.length;j++) {
+            var model = contactes.at(j);
+            if(lletra==model.get('name').charAt(0).toUpperCase()) { %>
+                <li style="list-style:none;">
+                    <div class="panel panel-default contacte" title="Consultar el contacte">
+                        <div class="panel-body">
+                            <img src="img/imatge.png" alt="Imatge de perfil de <%= model.get('name') %>" title="Imatge de perfil de <%= model.get('name') %>" class="pull-left">
+                            <input type="hidden" value="<%=model.cid%>"/>
+                            <div class="center-block">&nbsp<%= model.get('name') %></div><br>
+                            <div class="center-block">&nbsp<%= model.get('mail') %></div>
+                        </div>
+                    </div>
+                </li>
+            <%}
+        }
+        %>
+    </ul>
+</div>
+</div>
+<%}%>

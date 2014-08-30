@@ -1,0 +1,98 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.llistaImatges {
+    height: 171px;
+    width: 183px;
+}
+
+.missatge-error {
+    color: #8B0000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+#goTop{
+   /* background: #6a6962;*/
+    padding:5px;
+    position:fixed;
+    top:100px;
+    z-index:1001;
+}
+
+th[data-sort] {
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-image: url(/CorreuElectronic/img/bg.gif);
+}
+
+th.sorting-desc[data-sort] {
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-image: url(/CorreuElectronic/img/asc.gif);
+}
+th.sorting-asc[data-sort] {
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-image: url(/CorreuElectronic/img/desc.gif);
+}
+div.thumbnail{
+    background-color:rgba(255, 255, 255, 0);
+    background: none !important;
+    border: none !important;
+}
+
+.btn{
+    background: -webkit-gradient(linear, left top, left bottom, from(#ebeff2), to(#ccd5df));
+    background: -moz-linear-gradient(top, #ebeff2, #ccd5df);
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ebeff2, endColorstr=#ccd5df)";
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ebeff2, endColorstr=#ccd5df)";
+
+    border: 1px solid #ACBECF;
+    cursor: pointer;
+
+    -moz-border-radius: 10.5em;
+    border-radius: 0.5em;
+}
+
+.btn:hover{
+    -o-box-shadow: 2px 2px 19px #CCC;
+    -webkit-box-shadow: 2px 2px 19px #CCC;
+    -moz-box-shadow: 2px 2px 19px #CCC;
+}
+
+.btn:active{
+    -o-box-shadow: 2px 2px 19px #FFCC00;
+    -webkit-box-shadow: 2px 2px 19px #FFCC00;
+    -moz-box-shadow: 2px 2px 19px #FFCC00;
+}
+
+.msg {
+    cursor:pointer;
+}
+
+.contacte {
+    border-color:brown;
+    cursor:pointer;
+}
+
+
+.contacte:hover{
+    -o-box-shadow: 2px 2px 19px brown;
+    -webkit-box-shadow: 2px 2px 19px brown;
+    -moz-box-shadow: 2px 2px 19px brown;
+}
+
+.lletra {
+    cursor:pointer;
+}

@@ -1,0 +1,38 @@
+<ul class="pager">
+    <li class="previous disabled" title="Anterior"><a href="#">&larr; Anterior</a></li>
+    <li class="next" title="Següent"><a href="#">Següent &rarr;</a></li>
+</ul>
+<table class="table table-striped table-condensed table-hover" id="correus">
+    <thead>
+    <tr>
+        <th>&nbsp</th>
+        <th style="width: 2%"><strong>Marca</strong></th>
+        <th data-sort="string"><strong>Remitent</strong></th>
+        <th></th>
+        <th data-sort="string"><strong>Assumpte</strong></th>
+        <th data-sort="date" data-sort-default="desc"><strong>Data</strong></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%
+for(var i = 0; i<correus.length;i=i+1){
+var item = correus.at(i);
+    %>
+    <tr class="msg" title="Obre el missatge">
+    <%if(item.get('read')) {%>
+    <td></td>
+    <%} else {%>
+    <td><img src="img/new.png" style="width:20px;height:30px;" name="new"></td>
+    <%}%>
+    <td style="cursor:default;"><input type="checkbox" name="seleccionador" value="<%= item.cid %>"/></td>
+    <td><%= item.get('from') %></td>
+    <td>&nbsp-&nbsp</td>
+    <td><%= item.get('subject') %></td>
+    <td><%= item.get('date') %></td>
+</tr>
+<%
+};
+%>
+    </tbody>
+</table>
+

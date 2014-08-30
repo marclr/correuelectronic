@@ -1,0 +1,79 @@
+<div class="list-group">
+    <% if(active==0) %>
+    <a href="#bustia" class="list-group-item menu active" title="Obre"><input type="hidden" value="0"/><span class="badge" title="Correus sense llegir"><%= badges.inbox %></span>Bústia</a>
+    <% else %>
+    <a href="#bustia" class="list-group-item menu" title="Obre"><input type="hidden" value="0"/><span class="badge" title="Correus sense llegir"><%= badges.inbox %></span>Bústia</a>
+
+   <% if(active==1) %>
+    <a href="#bustia/paperera" class="list-group-item remove menu active" title="Obre"><input type="hidden" value="1"/>Paperera<span class="badge" title="Correus sense llegir"><%= badges.paperera %></span></a>
+    <% else %>
+    <a href="#bustia/paperera" class="list-group-item remove menu" title="Obre"><input type="hidden" value="1"/>Paperera<span class="badge" title="Correus sense llegir"><%= badges.paperera %></span></a>
+
+    <% if(active==2) %>
+    <a href="#bustia/spam" class="list-group-item remove menu active" title="Obre"><input type="hidden" value="2"/>Correu brossa<span class="badge" title="Correus sense llegir"><%= badges.spam %></span></a>
+    <% else {%>
+    <a href="#bustia/spam" class="list-group-item remove menu" title="Obre"><input type="hidden" value="2"/>Correu brossa<span class="badge" title="Correus sense llegir"><%= badges.spam %></span></a>
+    <%}%>
+    <%
+    //Comptem els correus sense llegir
+    var acc = 0;
+    for (var k in directoris){
+        if (directoris.hasOwnProperty(k)) {
+            acc+=directoris[k];
+        }
+    }
+    if(active==3) %>
+    <a href="#bustia/arxivador" class="list-group-item menu active" title="Obre"><input type="hidden" value="3"/><span class="badge" title="Correus sense llegir"><%= acc %></span>Arxivador</a>
+    <% else %>
+    <a href="#bustia/arxivador" class="list-group-item menu" title="Obre"><input type="hidden" value="3"/><span class="badge" title="Correus sense llegir"><%= acc %></span>Arxivador</a>
+    <%
+        var act = 4;
+        for (var k in directoris){
+            if (directoris.hasOwnProperty(k)) {
+                if(active==act) {
+                %>
+                    <a href="#bustia/<%=k%>" class="list-group-item menu active" title="Obre"><input type="hidden" value="<%=act%>"/><span class="badge" title="Correus sense llegir"><%= directoris[k] %></span><%=k.charAt(0).toUpperCase() + k.slice(1)%></a>
+                <%
+                }
+                else {
+                %>
+                    <a href="#bustia/<%=k%>" class="list-group-item menu" title="Obre"><input type="hidden" value="<%=act%>"/><span class="badge" title="Correus sense llegir"><%= directoris[k] %></span><%=k.charAt(0).toUpperCase() + k.slice(1)%></a>
+                <%
+                }
+                act++
+            }
+        }
+    %>
+</div>
+<div class="row">
+    <a class="btn primary btn-block" id="arxivar" title="Arxiva o mou el correu">
+        <div class="thumbnail img-responsive">
+            <img  src="img/arxivador.png" alt="Icona per arxivar el correu">
+            <div class="caption">
+                <p class="text-center">Arxiva o mou el correu</p>
+            </div>
+        </div>
+    </a>
+    <br>
+    <a class="btn primary btn-block novaCarpeta" title="Crea una nova carpeta">
+        <div class="thumbnail img-responsive">
+            <img  src="img/carpeta.png" alt="Icona per crear una nova carpeta">
+            <div class="caption">
+                <p class="text-center">Crea una nova carpeta</p>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="dialog-message" id="carpeta">
+    <p>Escull on vols que vagi el correu:</p>
+    <input type="radio" name="carpeta" value="0" ckecked> Bustia<br>
+    <div id="altresCarpetes">
+        <input type="radio" name="carpeta" value="2"> Familia<br>
+        <input type="radio" name="carpeta" value="3"> Feina
+    </div>
+</div>
+
+<div class="dialog-message" id="novaCarpeta">
+    <p>Introdueix el text de la nova carpeta:</p>
+    <input type="text" id="novaCarpetaText"/>
+</div>

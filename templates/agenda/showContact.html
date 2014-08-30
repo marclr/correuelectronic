@@ -1,0 +1,25 @@
+<div class="panel panel-default col-sm-9" style="width:100%;">
+<br><br>
+    <div id="newContact" class="panel panel-default col-sm-9" style="border-color:brown">
+        <br>
+        <input type="hidden" id="cid" value="<%=contacte.cid%>"/>
+        <strong>Nom:&nbsp</strong><input type="text" name="name" class="form-control" value="<%= contacte.get('name') %>" title="Nom"/><br>
+        <strong>Adreça electrònica:&nbsp</strong><input type="text" name="mail" class="form-control" value="<%= contacte.get('mail') %>" title="Adreça electrònica"/><br>
+        <strong>Notes:&nbsp</strong><br>
+        <div>
+            <textarea name="notes" class="form-control" style="height:200px" title="Notes"><%= contacte.get('notes') %></textarea>
+        </div>
+        <br>
+        <strong>Imatge:</strong>
+        <br>   <br>
+        <img src="img/imatge.png" alt="Imatge de perfil" title="Imatge de <%= contacte.get('name') %>"/>
+        <br>   <br>
+    </div>
+    <div class="col-sm-3">
+        <button class="pull-right btn btn-default" style="border-color:black" id="modifyContact" title="Modifica el contacte">Modifica el contacte</button>
+        <button class="pull-right btn btn-default" style="border-color:black;display:none" id="saveContact" title="Guarda els canvis">Guarda els canvis</button>
+        <br>        <br>
+        <br>        <br>
+        <button class="pull-right btn btn-default" style="border-color:black" id="deleteContact" title="Elimina el contacte">Elimina el contacte</button>
+    </div>
+</div>
